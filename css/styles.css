@@ -24,10 +24,46 @@ body {
     background-color: #008080;
     padding: 20px;
     color: #000;
-    animation-duration: 0.01s;
-    animation-name: textflicker;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(45deg, transparent 48%, #ff00ff 49%, #ff00ff 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, #00ffff 49%, #00ffff 51%, transparent 52%),
+        radial-gradient(circle at 50% 50%, #ff00ff 0%, transparent 20%),
+        repeating-linear-gradient(0deg, transparent, transparent 20px, #00ffff 20px, #00ffff 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 20px, #ff00ff 20px, #ff00ff 40px);
+    background-size: 60px 60px, 60px 60px, 120px 120px, 100% 100%, 100% 100%;
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+    opacity: 0.15;
+    animation: patternMove 8s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes patternMove {
+    from {
+        background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+    }
+    to {
+        background-position: 60px 60px, -60px -60px, 120px 120px, 40px 0, 0 40px;
+    }
+}
+
+@keyframes textflicker {
+    from {
+      text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+    }
+  
+    to {
+      text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    }
 }
 
 .container {
@@ -43,6 +79,12 @@ body {
 .window-header {
     background-color: #000080;
     padding: 5px;
+    animation-duration: 0.5s;
+    animation-name: textflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    position: relative;
+    overflow: hidden;
 }
 
 .window-header:hover {
@@ -211,9 +253,10 @@ body {
 }
 
 .email-content {
-    padding: 10px;
-    max-height: 400px;
-    overflow-y: auto;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-family: 'VT323', monospace;
+    line-height: 1.4;
 }
 
 .video-container {
@@ -238,13 +281,3 @@ footer p {
     color: #333;
     margin: 0;
 }
-
-@keyframes textflicker {
-    from {
-      text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
-    }
-  
-    to {
-      text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
-    }
-  }
