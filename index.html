@@ -18,6 +18,7 @@
                 </div>
             </div>
             <button class="compose-btn" onclick="document.getElementById('compose-popup').style.display='block'">New Message</button>
+            <button class="compose-btn" onclick="document.getElementById('video-player-popup').style.display='block'">Training Video</button>
         </header>
         
         <main class="inbox" id="inbox">
@@ -25,7 +26,7 @@
         </main>
 
         <footer>
-            <p>Copyright © 1990 Blockbuster Video System. All rights reserved.</p>
+            <p>Copyright 1990 Blockbuster Video System. All rights reserved.</p>
         </footer>
     </div>
 
@@ -43,6 +44,26 @@
                 <textarea placeholder="Message" class="message-field"></textarea>
                 <button type="submit" class="send-btn">SEND</button>
             </form>
+        </div>
+    </div>
+
+
+    
+
+    <div id="video-player-popup" class="popup" style="display: none;">
+        <div class="popup-content" style="width: 640px;">
+            <div class="window-header">
+                <div class="title-bar">
+                    <h2>BLOCKBUSTER Training Video</h2>
+                    <span class="close" onclick="document.getElementById('video-player-popup').style.display='none'">×</span>
+                </div>
+            </div>
+            <div class="video-container" style="background: #000; padding: 10px;">
+                <video id="training-video" style="width: 100%;" controls>
+                    <source src="assets/training.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
     </div>
 
@@ -68,7 +89,7 @@
     <div id="special-popup" class="popup" style="display: none; position: absolute; cursor: move; background: #000; border: 2px solid #ff0; padding: 10px; z-index: 1000; width: 200px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
         <div class="window-header" style="background: #ff0; padding: 5px; margin-bottom: 10px;">
             <div class="title-bar">
-                <h2 style="margin: 0; color: #000; font-size: 14px;">🎬 Special Message</h2>
+                <h2 style="margin: 0; color: #000; font-size: 14px;"> Special Message</h2>
                 <span class="close" onclick="document.getElementById('special-popup').style.display='none'" style="cursor: pointer;">×</span>
             </div>
         </div>
@@ -78,7 +99,7 @@
     <div id="final-popup" class="popup" style="display: none; position: absolute; cursor: move; background: #000; border: 2px solid #ff0; padding: 10px; z-index: 1000; width: 200px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
         <div class="window-header" style="background: #ff0; padding: 5px; margin-bottom: 10px;">
             <div class="title-bar">
-                <h2 style="margin: 0; color: #000; font-size: 14px;">🎬 THE DOOR IS OPEN YOU ARE FREE</h2>
+                <h2 style="margin: 0; color: #000; font-size: 14px;"> THE DOOR IS OPEN YOU ARE FREE</h2>
                 <span class="close" onclick="document.getElementById('final-popup').style.display='none'" style="cursor: pointer;">×</span>
             </div>
         </div>
@@ -89,7 +110,7 @@
     <template id="ad-popup-template">
         <div class="ad-popup" style="display: block; position: absolute; background: #c0c0c0; border: 2px outset #fff; padding: 2px; z-index: 1000; width: 250px; box-shadow: 2px 2px 10px rgba(0,0,0,0.3);">
             <div class="window-header" style="background: #000080; padding: 3px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
-                <h2 style="margin: 0; color: #fff; font-size: 14px; font-weight: bold;">🔥 AMAZING OFFER!</h2>
+                <h2 style="margin: 0; color: #fff; font-size: 14px; font-weight: bold;"> AMAZING OFFER!</h2>
                 <span class="close" style="color: #fff; cursor: pointer; padding: 0 5px;">×</span>
             </div>
             <div style="padding: 10px; background: #fff; font-family: 'MS Sans Serif', Arial, sans-serif;">

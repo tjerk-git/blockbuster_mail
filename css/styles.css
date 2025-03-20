@@ -216,6 +216,18 @@ body {
     overflow-y: auto;
 }
 
+.video-container {
+    background: #000;
+    padding: 10px;
+    border: 2px inset #fff;
+}
+
+.video-container video {
+    display: block;
+    width: 100%;
+    outline: none;
+}
+
 footer {
     padding: 15px;
     text-align: center;

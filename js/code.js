@@ -48,6 +48,8 @@ var PusherManager = {
         this.inbox = document.getElementById('inbox');
         this.specialPopup = document.getElementById('special-popup');
         this.finalPopup = document.getElementById('final-popup');
+        this.videoPopup = document.getElementById('video-player-popup');
+        this.trainingVideo = document.getElementById('training-video');
         
         // Create error popup from template
         const errorTemplate = document.getElementById('error-popup-template');
@@ -58,7 +60,13 @@ var PusherManager = {
         this.errorPopup.querySelector('.close').addEventListener('click', () => this.errorPopup.style.display = 'none');
         this.errorPopup.querySelector('button').addEventListener('click', () => this.errorPopup.style.display = 'none');
 
-        // Add click handlers for window controls
+        // Add video popup close handler
+        this.videoPopup.querySelector('.close').addEventListener('click', () => {
+            this.videoPopup.style.display = 'none';
+            this.trainingVideo.pause();
+        });
+
+        // Add click handler for window controls
         document.querySelectorAll('.window-controls span').forEach(control => {
             control.addEventListener('click', () => {
                 this.errorSound.currentTime = 0;
@@ -191,6 +199,12 @@ var PusherManager = {
         let xOffset = 0;
         let yOffset = 0;
         let activePopup = null;
+        let highestZIndex = 1000;
+
+        const bringToFront = (popup) => {
+            highestZIndex += 1;
+            popup.style.zIndex = highestZIndex;
+        };
 
         const dragStart = (e) => {
             // Only start dragging if clicking on the header
@@ -199,6 +213,14 @@ var PusherManager = {
                 if (popup) {
                     isDragging = true;
                     activePopup = popup;
+                    bringToFront(popup);
+                    
+                    // Get the current transform values if they exist
+                    const transform = window.getComputedStyle(popup).transform;
+                    const matrix = new DOMMatrixReadOnly(transform);
+                    xOffset = matrix.m41;
+                    yOffset = matrix.m42;
+                    
                     initialX = e.clientX - xOffset;
                     initialY = e.clientY - yOffset;
                 }
@@ -227,13 +249,18 @@ var PusherManager = {
             this.specialPopup,
             this.finalPopup,
             document.getElementById('email-detail-popup'),
-            document.getElementById('compose-popup')
+            document.getElementById('compose-popup'),
+            document.getElementById('video-player-popup')
         ];
 
         popups.forEach(popup => {
             if (popup) {
+                // Initialize popup position
                 popup.style.position = 'absolute';
                 popup.style.cursor = 'default';
+                popup.style.top = '50%';
+                popup.style.left = '50%';
+                popup.style.transform = 'translate(-50%, -50%)';
                 popup.addEventListener('mousedown', dragStart);
             }
         });
@@ -243,10 +270,14 @@ var PusherManager = {
     },
 
     setupKeyboardHandlers: function() {
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
                 document.getElementById('compose-popup').style.display = 'none';
                 document.getElementById('email-detail-popup').style.display = 'none';
+                if (this.videoPopup.style.display !== 'none') {
+                    this.videoPopup.style.display = 'none';
+                    this.trainingVideo.pause();
+                }
                 this.specialPopup.style.display = 'none';
             }
         });
