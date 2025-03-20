@@ -1,0 +1,36 @@
+{
+  "emails": [
+    {
+      "id": 1,
+      "sender": "System Admin",
+      "subject": "Welcome to hell!",
+      "content": "uuuuuuuh, what, hello? You entered this store? WHY? To return a videotape? Oh let me check my system, oh you're only 20 years late.\nThat means you have an outstanding debt of \"uuuuuhm let me calculate here\" oh around 2.5 billion United American dollars.\nSo that means i am locking you in here, and you need to work off your debt.\nThere must be an introduction video somewhere.\nGood luck, asshole.",
+      "date": "2025-03-20T13:33:26+01:00",
+      "unread": true
+    },
+    {
+      "id": 2,
+      "sender": "System Admin",
+      "subject": "I hate you",
+      "content": "But you finished game one.. yay",
+      "date": "2025-03-20T13:28:26+01:00",
+      "unread": true
+    },
+    {
+      "id": 3,
+      "sender": "Burt Lockbuster",
+      "subject": "I will reveal my name",
+      "content": "But that's all you're getting",
+      "date": "2025-03-20T12:33:26+01:00",
+      "unread": true
+    },
+    {
+      "id": 4,
+      "sender": "Burt Lock Buster",
+      "subject": "Hi baby reindeer",
+      "content": "I will not be your friend",
+      "date": "2025-03-20T08:33:26+01:00",
+      "unread": true
+    }
+  ]
+}
