@@ -19,8 +19,47 @@
             </div>
             <button class="compose-btn" onclick="document.getElementById('compose-popup').style.display='block'">New Message</button>
             <button class="compose-btn" onclick="document.getElementById('video-player-popup').style.display='block'">Training Video</button>
+            <button class="compose-btn" onclick="toggleProfile()">Profile</button>
         </header>
         
+        <div id="timer-window" class="timer-window">
+            <div class="window-header" onmousedown="startDragging(event, 'timer-window')">
+                <div class="title-bar">
+                    <h2>Break Timer</h2>
+                    <div class="window-controls">
+                        <span class="minimize">_</span>
+                        <span class="maximize">□</span>
+                
+                    </div>
+                </div>
+            </div>
+            <div class="timer-content">
+                <div id="timer-display">30:00</div>
+                <button class="timer-btn">Reset</button>
+            </div>
+        </div>
+
+        <div id="profile-window" class="profile-window" style="display: none;">
+            <div class="window-header" onmousedown="startDragging(event, 'profile-window')">
+                <div class="title-bar">
+                    <h2>Employee Profile</h2>
+                    <div class="window-controls">
+                        <span class="minimize">_</span>
+                        <span class="maximize">□</span>
+                        <span class="close" onclick="document.getElementById('profile-window').style.display='none'">×</span>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-content">
+                <img src="assets/profile-placeholder.png" alt="Burt Lockbuster" class="profile-image">
+                <div class="profile-info">
+                    <div class="info-row"><span class="label">Name:</span> Burt Lockbuster</div>
+                    <div class="info-row"><span class="label">Employee #:</span> 4555</div>
+                    <div class="info-row"><span class="label">DOB:</span> 09-07-1960</div>
+                </div>
+            </div>
+        </div>
+
         <main class="inbox" id="inbox">
             <!-- Emails will be loaded here -->
         </main>
@@ -144,5 +183,92 @@
 
     <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
     <script type="text/javascript" src="js/code.js"></script>
+    <script>
+        let timerInterval;
+        let timeLeft = 30 * 60; // 30 minutes in seconds
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer-display').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft === 0) {
+                clearInterval(timerInterval);
+                alert('Break time is over!');
+            } else {
+                timeLeft--;
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timeLeft = 30 * 60;
+            updateTimer();
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        // Start the timer when the page loads
+        resetTimer();
+
+        function toggleProfile() {
+            const profile = document.getElementById('profile-window');
+            profile.style.display = profile.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Dragging functionality
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+        let activeWindow = null;
+
+        function startDragging(event, windowId) {
+            if (event.target.classList.contains('close') || 
+                event.target.classList.contains('minimize') || 
+                event.target.classList.contains('maximize')) {
+                return;
+            }
+            
+            isDragging = true;
+            activeWindow = document.getElementById(windowId);
+            
+            initialX = event.clientX - activeWindow.offsetLeft;
+            initialY = event.clientY - activeWindow.offsetTop;
+            
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', stopDragging);
+            
+            // Change cursor style
+            activeWindow.style.cursor = 'grabbing';
+        }
+
+        function drag(event) {
+            if (!isDragging) return;
+            
+            event.preventDefault();
+            
+            currentX = event.clientX - initialX;
+            currentY = event.clientY - initialY;
+            
+            // Keep window within viewport bounds
+            currentX = Math.max(0, Math.min(currentX, window.innerWidth - activeWindow.offsetWidth));
+            currentY = Math.max(0, Math.min(currentY, window.innerHeight - activeWindow.offsetHeight));
+            
+            activeWindow.style.left = currentX + 'px';
+            activeWindow.style.top = currentY + 'px';
+        }
+
+        function stopDragging() {
+            isDragging = false;
+            if (activeWindow) {
+                activeWindow.style.cursor = 'grab';
+                activeWindow = null;
+            }
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', stopDragging);
+        }
+    </script>
 </body>
 </html>

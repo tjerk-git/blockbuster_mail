@@ -85,6 +85,7 @@ body::before {
     animation-direction: alternate;
     position: relative;
     overflow: hidden;
+    cursor: grab;
 }
 
 .window-header:hover {
@@ -269,6 +270,107 @@ body::before {
     display: block;
     width: 100%;
     outline: none;
+}
+
+.profile-window {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #c0c0c0;
+    border: 3px solid #ffffff;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+    width: 300px;
+    z-index: 1000;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    user-select: none;
+}
+
+.profile-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #808080;
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+    background-color: #ffffff;
+    object-fit: cover;
+    align-self: center;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-info .info-row {
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.profile-info .label {
+    color: #000080;
+    margin-right: 8px;
+}
+
+.timer-window {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #c0c0c0;
+    border: 3px solid #ffffff;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+    width: 200px;
+    z-index: 1000;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    user-select: none;
+}
+
+.timer-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#timer-display {
+    font-size: 24px;
+    font-family: 'Press Start 2P', cursive;
+    color: #000080;
+    text-shadow: 1px 1px #ffffff;
+    padding: 10px;
+    background: #ffffff;
+    border: 2px solid #808080;
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+    width: 100%;
+    text-align: center;
+}
+
+.timer-btn {
+    background-color: #c0c0c0;
+    border: 3px solid #ffffff;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+    padding: 8px 16px;
+    font-size: 12px;
+    cursor: pointer;
+    width: 80px;
+}
+
+.timer-btn:active {
+    border-color: #808080;
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
 }
 
 footer {

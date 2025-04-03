@@ -2,34 +2,82 @@
   "emails": [
     {
       "id": 1,
-      "sender": "System Admin",
-      "subject": "Welcome to hell!",
-      "content": "uuuuuuuh, what, hello?\n\nYou entered this store?\nWHY?\n\nTo return a videotape?\nOh let me check my system...\n\noh you're only 20 years late.\n\nThat means you have an outstanding debt of...\n\"uuuuuhm let me calculate here\"\noh around 2.5 billion United American dollars.\n\nSo that means i am locking you in here,\nand you need to work off your debt.\n\nThere must be an introduction video somewhere.\n\nGood luck, asshole.",
-      "date": "2025-03-20T13:33:26+01:00",
+      "sender": "Burt Lockbuster",
+      "subject": "HELP! We're trapped!",
+      "content": "Uuuh, hello??!\n\nWhat are you doing here? My name is Burt.. and uuuh.\nI think I am stuck here, just like you it seems huh?\n\nOH SHIT THE BREAK TIMER, IF THAT THING HITS 0 we are both screwed.\n\nHelp me!\n\nLast time I checked I was in the store just being bored and I think I am trapped in one of these computers somehow.\n\nCan you help me get out? And also yourself?\n\nLuna left her computer running again. Look around there.\n\nBetter check it out…\n\nGood luck, Burt.",
+      "date": "2025-03-21T14:06:55+01:00",
       "unread": true
     },
     {
       "id": 2,
-      "sender": "System Admin",
-      "subject": "I hate you",
-      "content": "But you finished game one.. yay",
-      "date": "2025-03-20T13:28:26+01:00",
+      "sender": "Burt Lockbuster",
+      "subject": "Laser Security System",
+      "content": "Pfff, ok ok ok,.\n\nSomeone needs to fix the laser security system.\nThe security guard Bram put some effort in there.\n\nUse code 4321 to get started.",
+      "date": "2025-03-21T14:05:55+01:00",
       "unread": true
     },
     {
       "id": 3,
       "sender": "Burt Lockbuster",
-      "subject": "I will reveal my name",
-      "content": "But that's all you're getting",
-      "date": "2025-03-20T12:33:26+01:00",
+      "subject": "The Vault",
+      "content": "Hey… we are getting somewhere.\n\nBut you won't get any further, you will never crack the vault. Not even if you know my employee number.\n\nAsh did some top notch security on that bad boi.",
+      "date": "2025-03-21T14:04:55+01:00",
       "unread": true
     },
     {
       "id": 4,
-      "sender": "Burt Lock Buster",
-      "subject": "Hi baby reindeer",
-      "content": "I will not be your friend",
-      "date": "2025-03-20T08:33:26+01:00",
+      "sender": "Burt Lockbuster",
+      "subject": "Arcade Machine Code",
+      "content": "Woah, you got through the vault?\n\nWell you won't get your way into the arcade machine.\nTom should have fixed it.\n\nHell I'll even give you the code for it.\n\nIt's 3333",
+      "date": "2025-03-21T14:03:55+01:00",
+      "unread": true
+    },
+    {
+      "id": 5,
+      "sender": "Burt Lockbuster",
+      "subject": "The Obelisks",
+      "content": "Ah, talked to Tom did you? He was stuck inside, ha! Just like you! Wait also me..\n\nListen, you go ahead and solve the \"Obelisks\", unlock it\nWith code 2222\n\nBut the guy Martin, who made that game. He got some of that big brain energy.",
+      "date": "2025-03-21T14:02:55+01:00",
+      "unread": true
+    },
+    {
+      "id": 6,
+      "sender": "Burt Lockbuster",
+      "subject": "Movie Trivia Quiz",
+      "content": "OK OK OK OK OK,\n\nThe other Tom was really into movie trivia, he made a quiz about it or something.\n\nSee if you can solve that then eh, if you are a movie buff, maybe we can get out.\n\nCode is 8912",
+      "date": "2025-03-21T14:01:55+01:00",
+      "unread": true
+    },
+    {
+      "id": 7,
+      "sender": "Burt Lockbuster",
+      "subject": "Another Quiz!",
+      "content": "HMMM, DO ANOTHER MOVIE QUIZ\nShould be next to the other one.\n\nCode is 8742",
+      "date": "2025-03-21T14:00:55+01:00",
+      "unread": true
+    },
+    {
+      "id": 8,
+      "sender": "Burt Lockbuster",
+      "subject": "Jurassic Park Game",
+      "content": "I really like Jurassic Park, loved playing that game when I was here. Maybe I am stuck there?\n\nThere was a whole adventure game I think.\n\nFind it and play it, then I will give you a hint.\n\nYou can unlock the game with code 9212",
+      "date": "2025-03-21T13:59:55+01:00",
+      "unread": true
+    },
+    {
+      "id": 9,
+      "sender": "Burt Lockbuster",
+      "subject": "Security Camera",
+      "content": "HA! You played the game, yay.\n\nTudududuuuduuuduuuh\n\nOh shit, I see the security camera is failing\nCan you fix it?\n\nYou are almost out I promise.\n\nAccess Code is 1111",
+      "date": "2025-03-21T13:58:55+01:00",
+      "unread": true
+    },
+    {
+      "id": 10,
+      "sender": "Burt Lockbuster",
+      "subject": "Mexican Standoff",
+      "content": "Alright… I know where I am stuck.\nI… ii am in the Mexican Standoff Arcade game..\n\nFinish it, free me, and free yourself.\n\nThe code to start is 2222",
+      "date": "2025-03-21T13:57:55+01:00",
       "unread": true
     }
   ]
